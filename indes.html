@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Iraq X</title>
+
+  <meta name="description" content="مع افضل الالعاب و المتعة معا لنلعب" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="انضم لسيرفرنا على الديسكورد" />
+  <meta property="og:description" content="مجتمع فعّال — فعاليات أسبوعية، قيمنق، دردشات صوتية. اضغط وانضم." />
+  <meta property="og:image" content="logo.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+
+  <!-- Structured Data (اختياري) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Meet Friend Discord",
+    "url": "https://discord.gg/z23nvf9DY8",
+    "logo": "logo.png",
+    "sameAs": ["https://discord.gg/z23nvf9DY8", "https://wa.me/201234567890"]
+  }
+  </script>
+
+  <style>
+      #server-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid var(--acc-2);
+    object-fit: cover;
+    background: radial-gradient(circle at 30% 30%, var(--acc-1), var(--acc-2));
+    padding: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    display: block;
+    margin: 0 auto 12px;
+  }
+     :root{
+      --bg-1:#050A30; /* كحلي أساسي */
+      --bg-2:#000130; /* كحلي أغمق */
+      --acc-1:#FFDE32; /* أصفر أساسي */
+      --acc-2:#FFE732; /* أصفر أفتح */
+      --success:#22c55e;
+      --warning:#f59e0b;
+      --danger:#ef4444;
+      --txt:#ffffff; /* نص أبيض */
+      --muted:rgba(255,255,255,0.75);
+      --glass:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.12);
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg-1:#ffffff; --bg-2:#f6f7fb;
+        --txt:#0b1020; --muted:#64748b;
+        --glass:rgba(10,16,32,.04);
+        --border:rgba(10,16,32,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    :target{scroll-margin-top:88px}
+    body{
+      margin:0;
+      font-family: ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Naskh Arabic", "Tajawal", Arial, sans-serif;
+      color:var(--txt);
+      background:
+        radial-gradient(1200px 800px at 80% -20%, rgba(255,222,50,.25), transparent),
+        radial-gradient(1000px 600px at -10% 120%, rgba(255,231,50,.25), transparent),
+        linear-gradient(120deg, var(--bg-1), var(--bg-2));
+      background-attachment: fixed;
+    }
+
+    .container{max-width:1100px; margin:auto; padding:0 20px}
+    .gradient-text{
+      background:linear-gradient(135deg,var(--acc-1),var(--acc-2));
+      -webkit-background-clip:text; background-clip:text; color:transparent
+    }
+
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(160%) blur(8px);
+      background:linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,0));
+      border-bottom:1px solid var(--border)
+    }
+    .nav__inner{
+      max-width:1100px; margin:auto;
+      padding:12px 20px; display:flex;
+      align-items:center; gap:16px; justify-content:space-between
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .brand__logo{
+      width:36px; height:36px; display:grid; place-items:center; border-radius:10px;
+      background:linear-gradient(135deg, var(--acc-1), var(--acc-2));
+      color:var(--bg-1); box-shadow:var(--shadow); font-size:18px
+    }
+    .links{display:flex; gap:18px; align-items:center}
+    .nav a{color:var(--txt); text-decoration:none; opacity:.9}
+    .nav a:hover,.nav a:focus-visible{opacity:1}
+    .theme-toggle{display:inline-grid; place-items:center; width:38px; height:38px; border-radius:12px; border:1px solid var(--border); background:var(--glass); cursor:pointer}
+
+    .menu-btn{display:none; width:38px; height:38px; border:1px solid var(--border); border-radius:12px; background:var(--glass)}
+    .menu{display:flex; gap:18px}
+    @media (max-width:720px){
+      .menu-btn{display:inline-grid; place-items:center}
+      .menu{display:none; position:absolute; right:16px; top:64px; background:var(--glass); border:1px solid var(--border); padding:10px; border-radius:14px; box-shadow:var(--shadow)}
+      .menu.open{display:grid}
+      .menu a{padding:8px 10px}
+    }
+
+    .hero{max-width:1100px; margin:40px auto; padding:24px 20px 10px; display:grid; grid-template-columns:1.1fr; align-items:center; gap:28px}
+    .hero__card{background:var(--glass); border:1px solid var(--border); border-radius:calc(var(--radius) + 2px);
+      padding:28px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+    .hero__badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; font-size:12px; color:var(--txt);
+      background:linear-gradient(135deg, rgba(255,222,50,.18), rgba(255,231,50,.18)); border:1px solid var(--border)}
+    h1{margin:14px 0 12px; font-size:clamp(26px, 5vw, 42px); line-height:1.15}
+    .lead{color:var(--muted); font-size:clamp(14px, 1.8vw, 18px)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      padding:12px 18px; border:none; border-radius:12px;
+      background:linear-gradient(135deg, var(--acc-1), var(--acc-2));
+      color:var(--bg-1); text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:10px;
+      transform:translateY(0); transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease
+    }
+    .btn--ghost{
+      background:transparent; color:var(--txt); border:1px solid var(--acc-1)
+    }
+    .btn:hover,.btn:focus-visible{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .btn svg{width:18px; height:18px}
+
+    .features{max-width:1100px; margin:14px auto 36px; padding:0 20px; display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(220px,1fr))}
+    .card{background:var(--glass); border:1px solid var(--border); border-radius:var(--radius); padding:18px; transition:transform .2s ease}
+    .card:hover{transform:translateY(-4px)}
+    .card h3{margin:8px 0 6px; font-size:18px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    .section{max-width:1100px; margin:10px auto 60px; padding:0 20px}
+    .section__title{font-size:22px; margin:0 0 12px}
+
+    footer{border-top:1px solid var(--border); padding:24px; text-align:center; color:var(--muted)}
+
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+    .reveal.in{opacity:1; transform:translateY(0)}
+    @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none} .btn{transition:none} }
+
+    .wa-fab{
+      position:fixed; left:18px; bottom:calc(18px + env(safe-area-inset-bottom)); z-index:60;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 14px; border-radius:999px;
+      background:linear-gradient(135deg, var(--acc-1), var(--acc-2));
+      color:var(--bg-1); text-decoration:none; font-weight:800; box-shadow:var(--shadow);
+      transition:transform .15s ease
+    }
+    .wa-fab:hover{transform:scale(1.03)}
+
+    @media (min-width:960px){ .hero{grid-template-columns:1.2fr .9fr} .hero__art{display:block} }
+    @media (max-width:959.98px){ .hero__art{display:none} }
+
+    .blob{position:absolute; inset:auto -80px -80px auto; width:220px; height:220px; filter:blur(40px);
+      background:conic-gradient(from 120deg, rgba(255,222,50,.35), rgba(255,231,50,.35), rgba(255,222,50,.35)); border-radius:50%; animation:spin 12s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .stats{max-width:1100px; margin:10px auto 60px; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px}
+    .stat{position:relative; background:var(--glass); border:1px solid var(--border); border-radius:16px; padding:16px; overflow:hidden; box-shadow:var(--shadow)}
+    .stat::after{content:""; position:absolute; inset:-1px; border-radius:16px;
+      background:conic-gradient(from 180deg, rgba(255,222,50,.25), rgba(255,231,50,.25), rgba(255,222,50,.25));
+      filter:blur(18px); opacity:.18; pointer-events:none}
+    .stat__num{font-size:28px; font-weight:900; line-height:1}
+    .stat__label{color:var(--muted); font-size:13px}
+    .stat__spark{position:absolute; inset:auto -30px -30px auto; width:90px; height:90px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,222,50,.38), rgba(255,231,50,.28), transparent 60%);
+      animation:spin 10s linear infinite}
+    .online-badge{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px;
+      background:linear-gradient(135deg, rgba(255,222,50,.18), rgba(255,231,50,.18));
+      border:1px solid var(--acc-1); font-weight:700; margin-bottom:10px
+    }
+    .dot{width:10px; height:10px; border-radius:50%; background:var(--success); position:relative}
+    .dot::after{content:""; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(34,197,94,.6);
+      animation:pulse 1.6s ease-out infinite}
+    @keyframes pulse{0%{transform:scale(.7); opacity:.9} 70%{transform:scale(1.3); opacity:0} 100%{opacity:0}}
+
+    .toast{position:fixed; inset:auto 50% 22px auto; transform:translateX(50%) translateY(15px); opacity:0;
+      transition:opacity .25s ease, transform .25s ease; background:var(--glass); border:1px solid var(--border);
+      color:var(--txt); padding:10px 14px; border-radius:12px; backdrop-filter:blur(8px); box-shadow:var(--shadow); z-index:90}
+    .toast.show{opacity:1; transform:translateX(50%) translateY(0)}
+
+    #server-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid var(--acc-1);
+      object-fit: cover;
+      background: radial-gradient(circle at 30% 30%, var(--acc-1), var(--acc-2));
+      padding: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: block;
+      margin: 0 auto 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav" aria-label="الشريط العلوي">
+    <div class="nav__inner">
+      <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 7h16v2H4zm0 4h16v2H4zm0 4h16v2H4z"/></svg>
+      </button>
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">IQX</div>
+        <div aria-label="Meet Friend" class="gradient-text">Iraq X</div>
+      </div>
+      <div class="links">
+        <div class="menu" id="menu">
+          <a href="#about">عن السيرفر</a>
+          <a href="#discord">الديسكورد</a>
+          <a href="#rules">القوانين</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل السمة">
+          <svg id="sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.8 4.8 5.4 3.4 3.3 5.5l1.4 1.4 2.1-2.1Zm10.4 0 2.1 2.1 1.4-1.4-2.1-2.1-1.4 1.4ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM6.8 19.2l-2.1 2.1-1.4-1.4 2.1-2.1 1.4 1.4Zm12.7.7-1.4 1.4-2.1-2.1 1.4-1.4 2.1 2.1ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__card reveal in">
+      <span class="hero__badge">🔥 مجتمع فعّال · 🎮 ألعاب · 🎤 صوتي</span>
+      <h1>مرحباً بك في <span class="gradient-text">Iraq X</span></h1>
+      <p class="lead">🎮 ديسكورد ألعاب وضحك وونسة
+هنا مكانك إذا كنت تحب الألعاب، النكت، والضحك مع ناس على نفس الموجة! 
+سيرفرنا يجمع بين أجواء القيمنق الممتعة والدردشة الخفيفة، مع فعاليات، تحديات، وميمز يومية. سواء تبغى تلعب، تتونس، أو حتى تسولف بس، بتلقى ناس مرحّبين وجو حماسي يخليك ترجع كل يوم.</p>
+      <div class="cta">
+        <a class="btn" id="joinDiscord" href="https://discord.gg/z23nvf9DY8" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.3 4.5A18 18 0 0 0 15.9 3l-.2.3c1.6.5 3.1 1.2 4.5 2.2a17 17 0 0 0-9.4 0c1.4-1 3-1.7 4.6-2.2L11.8 3a18 18 0 0 0-4.4 1.5C4.1 7.1 3 10 3 13c0 0 1.6 2.7 5.9 3l.7-.9c-1.2-.4-2.3-1-3.2-1.9.3.2.6.3.9.5a11 11 0 0 0 9.4 0c.3-.1.6-.3.9-.5-.9.9-2 1.5-3.2 1.9l.7.9c4.3-.3 5.9-3 5.9-3 0-3-1.1-5.9-3.7-8.5ZM9.7 12.8c-.9 0-1.6-.8-1.6-1.7 0-1 .7-1.7 1.6-1.7s1.6.8 1.6 1.7-.7 1.7-1.6 1.7Zm4.7 0c-.9 0-1.6-.8-1.6-1.7 0-1 .7-1.7 1.6-1.7s1.6.8 1.6 1.7-.7 1.7-1.6 1.7Z"/></svg>
+          ادخل الديسكورد
+        </a>
+        <button class="btn btn--ghost" id="copyInvite" type="button" aria-label="نسخ رابط الدعوة">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1Zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16H8V7h11v14Z"/></svg>
+          نسخ الرابط
+        </button>
+        <a class="btn btn--ghost" href="https://wa.me/201234567890?text=السلام%20عليكم%20وصلت%20من%20الصفحة%20🌟" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A10 10 0 0 0 3.5 20.5L2 22l1.7-.5A10 10 0 1 0 20.5 3.5ZM12 4a8 8 0 0 1 6.8 12.2c-.2.3-.4.6-.7.8A8 8 0 1 1 12 4Zm4.4 10.3c-.2-.1-1.4-.7-1.6-.8-.2-.1-.3-.1-.5.1-.1.2-.6.8-.7.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.2-.7-.7-1.2-1.6-1.3-1.8-.1-.2 0-.3.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5s-.5-1.2-.7-1.6c-.2-.4-.4-.3-.5-.3h-.4c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.7 2.6 4.1 3.6.6.3 1.1.5 1.5.6.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1.1.2-1.3 0-.1-.1-.2-.3-.3Z"/></svg>
+          واتساب
+        </a>
+        <button class="btn btn--ghost" id="shareBtn" type="button" aria-label="مشاركة الصفحة">شارك</button>
+      </div>
+      <div class="blob" aria-hidden="true"></div>
+    </div>
+
+    <!-- Side art -->
+    <div class="hero__art reveal" aria-hidden="true">
+      <div class="card" style="height:100%; display:grid; place-items:center">
+        <div style="text-align:center">
+          <div style="font-size:54px">💫</div>
+          <h3 style="margin:8px 0"> 🔥 تحديات ومسابقات 🎮 ألعاب جماعية ممتعة</h3>
+          <p style="color:var(--muted)">🎮 ألعاب جماعية ممتعة
+
+-Valorant
+
+-Fortnite
+
+-PUBG
+
+-Among Us
+
+-Minecraft
+
+-Call of Duty: Warzone
+
+-League of Legends
+
+-Rocket League
+
+-Apex Legends
+
+-Fall Guys
+-Counter-Strike 2 (CS2)
+
+-Overwatch 2
+
+-Rainbow Six Siege
+
+-Destiny 2
+
+-Battlefield 2042
+
+-Halo Infinite
+
+-The Finals
+</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section id="about" class="features" aria-label="مزايا السيرفر">
+    <article class="card reveal"><h3>فعاليات أسبوعية</h3><p>تحديات وجوائز رمزية — خُذ مكانك.</p></article>
+    <article class="card reveal"><h3>دردشات صوتية</h3><p>قنوات مرتّبة + بوتات موسيقى.</p></article>
+    <article class="card reveal"><h3>دعم سريع</h3><p>تواصل واتساب لأي استفسار.</p></article>
+    <article class="card reveal"><h3>مجتمع محترم</h3><p>قوانين واضحة وإشراف حاضر.</p></article>
+  </section>
+
+  <!-- Discord (بديل الودجت) -->
+  <section id="discord" class="section" aria-labelledby="discordTitle">
+    <h2 class="section__title" id="discordTitle">الديسكورد (مباشر)</h2>
+    <div class="card reveal" id="discord-card" style="text-align:center">
+      <div class="online-badge" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="fake-online">120</span> متصل الآن
+      </div>
+
+      <img id="server-icon" src="logo.png" alt="شعار السيرفر" loading="lazy" decoding="async"
+           style="width:90px; height:90px; border-radius:50%; margin-bottom:10px; border:1px solid var(--border); object-fit:cover">
+      
+      <h3 id="server-name" style="margin:8px 0">سيرفر الديسكورد</h3>
+      <p id="online-count" style="color:var(--muted); margin:6px 0 16px"><span class="skeleton"></span></p>
+      <a id="join-btn" class="btn" href="https://discord.gg/z23nvf9DY8" target="_blank" rel="noopener noreferrer">انضم الآن</a>
+      <p style="color:var(--muted); font-size:12px; margin-top:12px">نفرح في انضمامكم لنا</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats" aria-label="إحصائيات مختصرة">
+    <div class="stat">
+      <div class="stat__spark"></div>
+      <div class="stat__num" id="stat-members">850</div>
+      <div class="stat__label">عدد الأعضاء</div>
+    </div>
+    <div class="stat">
+      <div class="stat__spark"></div>
+      <div class="stat__num" id="stat-events">188</div>
+      <div class="stat__label">الفعاليات المنجزة</div>
+    </div>
+    <div class="stat">
+      <div class="stat__spark"></div>
+      <div class="stat__num" id="stat-channels">25</div>
+      <div class="stat__label">عدد القنوات</div>
+    </div>
+    <div class="stat">
+      <div class="stat__spark"></div>
+      <div class="stat__num" id="stat-games">144</div>
+      <div class="stat__label">الألعاب المدعومة</div>
+    </div>
+  </section>
+
+  <!-- Rules -->
+  <section id="rules" class="section" aria-labelledby="rulesTitle">
+    <h2 class="section__title" id="rulesTitle">قوانين مختصرة</h2>
+    <div class="card reveal">
+      <ul style="margin:0; padding-inline-start:20px; color:var(--muted); line-height:1.9">
+        <li>احترام الجميع — لا إساءة ولا عنصرية.</li>
+        <li>ممنوع السبام والإعلانات بدون إذن.</li>
+        <li>التزم بتوجيهات المشرفين داخل القنوات.</li>
+      </ul>
+      <div class="cta" style="margin-top:14px">
+        <a class="btn" href="https://discord.gg/z23nvf9DY8" target="_blank" rel="noopener noreferrer">ادخل الآن</a>
+        <a class="btn btn--ghost" href="https://wa.me/201234567890?text=عندي%20استفسار%20عن%20القوانين" target="_blank" rel="noopener noreferrer">اسألنا عالواتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-fab" href="https://wa.me/201234567890?text=السلام%20عليكم%20🖐🏻" target="_blank" rel="noopener noreferrer" aria-label="تواصل على واتساب">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A10 10 0 0 0 3.5 20.5L2 22l1.7-.5A10 10 0 1 0 20.5 3.5Z"/></svg>
+    واتساب
+  </a>
+
+  <footer>© <span id="y"></span>   powered by  Raji Al-Tameemi </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">تم النسخ ✅</div>
+
+  <script>
+    // سنة ديناميكية
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    if(menuBtn){
+      menuBtn.addEventListener('click', ()=> menu.classList.toggle('open'));
+    }
+
+    // Theme toggle (يحترم تفضيل النظام)
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const STORAGE_KEY = 'prefers-light';
+    const prefersLight = localStorage.getItem(STORAGE_KEY) === '1';
+    if(prefersLight){ root.style.colorScheme = 'light'; document.documentElement.classList.add('light'); }
+    themeToggle?.addEventListener('click', ()=>{
+      const isLight = root.style.colorScheme === 'light';
+      root.style.colorScheme = isLight ? 'dark' : 'light';
+      if(isLight){ localStorage.removeItem(STORAGE_KEY); document.documentElement.classList.remove('light'); }
+      else { localStorage.setItem(STORAGE_KEY, '1'); document.documentElement.classList.add('light'); }
+    });
+
+    // Scroll Reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ===== Fake Online badge (يتذبذب بسيط) =====
+    let onlineCountFake = 120;
+    const fakeEl = document.getElementById('fake-online');
+    setInterval(()=>{
+      const change = Math.floor(Math.random()*3) - 1; // -1 أو 0 أو +1
+      onlineCountFake = Math.max(80, onlineCountFake + change);
+      fakeEl.textContent = onlineCountFake;
+    }, 2000);
+
+    // ===== Discord Card (بديل الودجت) =====
+    const SERVER_ID = "762999037397827594"; // بدّلها لو عندك سيرفر آخر
+    const API_URL = `https://discord.com/api/guilds/${SERVER_ID}/widget.json`;
+
+    const nameEl = document.getElementById("server-name");
+    const iconEl = document.getElementById("server-icon");
+    const onlineEl = document.getElementById("online-count");
+
+    fetch(API_URL)
+      .then(res => {
+        if (!res.ok) throw new Error("widget off or forbidden");
+        return res.json();
+      })
+      .then(data => {
+        if (data.name) nameEl.textContent = data.name;
+        if (typeof data.presence_count === "number") {
+          onlineEl.textContent = `الحقيقي الآن: ${data.presence_count}`;
+        } else {
+          onlineEl.textContent = "جاهزين نستقبلك ✨";
+        }
+        if (data.icon_url) iconEl.src = data.icon_url; // علّق السطر لو تبغى شعارك دائماً
+      })
+      .catch(() => {
+        onlineEl.textContent = "انضم وخلّنا نبدأ! ✨";
+      });
+
+    // ===== Fake counters animation =====
+    function animateValue(id, start, end, duration) {
+      const obj = document.getElementById(id);
+      const range = end - start;
+      const stepTime = Math.max(10, Math.floor(duration / Math.max(1, Math.abs(range))));
+      let current = start;
+      const increment = end > start ? 1 : -1;
+      const timer = setInterval(() => {
+        current += increment;
+        obj.textContent = current;
+        if (current === end) clearInterval(timer);
+      }, stepTime);
+    }
+    window.addEventListener('load', ()=>{
+      animateValue("stat-members", 0, 850, 1500);
+      animateValue("stat-events", 0, 92, 1000);
+      animateValue("stat-channels", 0, 25, 800);
+      animateValue("stat-games", 0, 144, 800);
+    });
+
+    // ===== Copy invite + Toast =====
+    const copyBtn = document.getElementById('copyInvite');
+    const toast = document.getElementById('toast');
+    const invite = document.getElementById('joinDiscord')?.href || 'https://discord.gg/z23nvf9DY8';
+    copyBtn?.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(invite);
+        toast.textContent = 'تم النسخ ✅';
+      }catch{
+        toast.textContent = invite; // fallback: يظهر الرابط نفسه
+      }
+      toast.classList.add('show');
+      setTimeout(()=> toast.classList.remove('show'), 1800);
+    });
+
+    // ===== Web Share (للجوال) =====
+    const shareBtn = document.getElementById('shareBtn');
+    shareBtn?.addEventListener('click', async ()=>{
+      if(navigator.share){
+        try{ await navigator.share({ title: document.title, text: 'تعال انضم معنا في الديسكورد', url: location.href }); }
+        catch{}
+      } else {
+        // لو غير مدعوم، ننسخ الرابط كبديل
+        try{ await navigator.clipboard.writeText(location.href); }catch{}
+        toast.textContent = 'تم نسخ رابط الصفحة ✨';
+        toast.classList.add('show');
+        setTimeout(()=> toast.classList.remove('show'), 1800);
+      }
+    });
+  </script>
+</body>
+</html>
